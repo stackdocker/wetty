@@ -9,11 +9,11 @@ RUN apt-get install -y vim
 RUN useradd -d /home/term -m -s /bin/bash term
 RUN echo 'term:term' | chpasswd
 RUN mv /app/etc/oc /bin \
- && ln -s /bin/oc /bin/kubectl \ 
+ && ln -s /bin/oc /bin/kubectl \
  && mkdir /home/term/.kube \
  && mv /app/etc/kubeconfig /home/term/.kube/config \
- && mv /app/etc/ssl /home/term \
- && mv /app/etc/cacerts /home/term \
+ && mv /app/etc/ssl /home/term/.kube \
+ && mv /app/etc/cacerts /home/term/.kube \
  && rmdir /app/etc
 
 EXPOSE 9123
