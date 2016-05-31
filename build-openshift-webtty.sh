@@ -12,6 +12,6 @@ cp -r /data/src/github.com/openshift/origin/etc/kubernetes/kubeconfig $tgt/etc
 
 cp $tgt/Dockerfile.openshift $tgt/Dockerfile
 
-docker build -t tangfeixiong/openshift-webtty $tgt
+docker build -t tangfeixiong/openshift-webtty:v1.3.0-alpha.1 $tgt
 
 rm -rf $tgt
